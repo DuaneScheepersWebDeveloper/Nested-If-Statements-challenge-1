@@ -2,32 +2,28 @@
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static string username;
+        static string password;
+
+        public static void Register()
         {
-            bool loggedIn = false;
-            string username = "";
-            string password = "";
-
-            Console.WriteLine("Welcome to the User Login System!");
-
             // Registration
             Console.WriteLine("\nRegistration");
             Console.Write("Enter a username: ");
             username = Console.ReadLine();
-
             Console.Write("Enter a password: ");
             password = Console.ReadLine();
-
             Console.WriteLine("\nRegistration Successful!");
 
+        }
+        public static void Login()
+        {
             // Login
             Console.WriteLine("\nLogin");
             Console.Write("Enter your username: ");
             string inputUsername = Console.ReadLine();
-
             Console.Write("Enter your password: ");
             string inputPassword = Console.ReadLine();
-
             if (inputUsername == username && inputPassword == password)
             {
                 Console.WriteLine("\nLogin Successful!");
@@ -50,6 +46,15 @@
                 // Your additional program logic here if login fails
                 Console.WriteLine("\nAccess Denied. Exiting the program.");
             }
+        }
+        static void Main(string[] args)
+        {
+            bool loggedIn = false;
+  
+
+            Console.WriteLine("Welcome to the User Login System!");
+            Register();
+            Login();
 
             Console.WriteLine("\nPress any key to exit...");
             Console.ReadKey();
